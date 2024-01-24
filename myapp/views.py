@@ -158,11 +158,17 @@ def find_account(request):
             print(user_obj)
             if user_obj:
                 otp = str(random.random()).split('.')[1][0:6]
-                otp_obj = Otp(otp_data=otp, user=user_obj)
-                otp_obj.save()
-                request.session['otp'] = user_obj.id
+                try:
+                    otp_obj = Otp(otp_data=otp, user=user_obj)
+                    otp_obj.save()
+                    request.session['otp'] = user_obj.id
+                    return redirect('submit_otp')
+                except Exception as e:
 
-                return redirect('submit_otp')
+                    return render(request, "findaccount.html",
+                                  {"msg": "Otp is Already sended to our account please check"})
+
+
             else:
                 return render(request,"findaccount.html", {"msg": "Account not found"})
         except CustomBaseUser.DoesNotExist:
