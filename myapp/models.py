@@ -1,11 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser,AbstractBaseUser,PermissionsMixin
 from .manager import CustomUserManager
-from django.utils.timezone import timezone
-
 
 # Create your models here.
-
 
 class Timestamp(models.Model):
 

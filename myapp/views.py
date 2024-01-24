@@ -212,7 +212,7 @@ def new_password(request):
         if password == con_password:
             try:
                 user_obj = CustomBaseUser.objects.get(id=user_otp)
-                user_obj.password = password
+                user_obj.set_password(password)
                 user_obj.save()
                 otp_obj = Otp.objects.get(user=user_obj)
                 otp_obj.delete()
