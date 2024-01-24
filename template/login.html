@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    Email:-<input type="email" name="email" placeholder="Enter Email" required ><br>
+    password:-<input type="password" name="password" placeholder="Enter password" required ><br>
+    <input type="submit">
+    <a href="{% url 'findaccount' %}">Forgot Password</a>
+    <p>{{error}}</p>
+</form>
+</body>
+</html>

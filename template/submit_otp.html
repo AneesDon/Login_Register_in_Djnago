@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Otp</title>
+</head>
+<body>
+    <p>Check your email and Please,enter your otp within 2 minutes </p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="otp">
+        <input type="submit">
+    </form>
+</body>
+</html>

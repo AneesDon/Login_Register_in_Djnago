@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyer</title>
+</head>
+<body>
+{% if error%}
+    {{error}}<br>
+    <a href="{% url 'buyer' %}">Move To buyer</a>
+{%endif %}
+
+{% if not error %}
+hi,{{user.username}}---{{msg}}<br>
+<a href="{% url 'changepassword' user.id %}">Change Password</a><br>
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+{%endif%}
+
+
+</body>
+</html>

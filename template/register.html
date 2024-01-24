@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    
+<form method="post">
+{%csrf_token%}
+
+     Username:-<input type="text" name="username" id="username" required><br>
+    Email:-<input type="email" name="email" id="email" required><br>
+    Password:-<input type="password" name="password" id="password" required><br>
+    Confirm Password:-<input type="password" name="conpass" id="conpass" required><br>
+    <p>Who Are you?</p>
+    <input type="radio" id="buyer" name="user_type" value="buyer">
+    <label for="buyer">Buyer</label><br>
+    <input type="radio" id="Seller" name="user_type" value="seller">
+    <label for="Seller">Seller</label><br><br>
+    <input type="submit">
+    <p style="color:red">{{error}}</p>
+
+</form>
+
+</body>
+</html>
